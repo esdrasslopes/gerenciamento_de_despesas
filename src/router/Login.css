@@ -1,0 +1,91 @@
+.singin-container {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+  margin: 0 auto 2rem;
+  padding: 1rem;
+  max-width: 700px;
+  width: 90%;
+}
+
+.singin-container h1 {
+  color: #0991bed5;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.singin-container form {
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 700px;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+
+.singin-container form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.singin-container form label p {
+  color: #444;
+}
+
+.singin-container form label .mandatory {
+  color: red;
+}
+
+.singin-container form label input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  border-bottom: 2px solid #ccc;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+}
+
+.singin-container form label input:focus {
+  border-bottom: 2px solid #0991bed5;
+}
+
+.singin-container form input[type="submit"] {
+  align-self: center;
+  width: 250px;
+  padding: 0.5rem 1.6rem;
+  background-color: #0991bed5;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0.5px 1px 4px 3px rgba(9, 145, 190, 0.4);
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+
+.singin-container form input[type="submit"]:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 425px) {
+  .singin-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .singin-container form input[type="submit"] {
+    width: 150px;
+  }
+}

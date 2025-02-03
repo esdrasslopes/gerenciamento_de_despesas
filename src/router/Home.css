@@ -1,0 +1,86 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  min-height: 80vh;
+}
+
+.content {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.content h1 {
+  font-size: 2.6rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #0991bed5;
+  border-radius: 8px;
+  margin-left: 5px;
+}
+
+.content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.content .actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.content .actions a {
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  transition: 0.4s;
+}
+
+.content .actions .start {
+  background-color: #0991bed5;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.content .actions .know-us {
+  background-color: #f4f4f4;
+  color: #0991bed5;
+  opacity: 0.9;
+}
+
+.content .actions a:hover {
+  opacity: 1;
+}
+
+@media (max-width: 425px) {
+  .home .content h1 {
+    font-size: 2rem;
+  }
+
+  .home .content p {
+    font-size: 0.9rem;
+  }
+
+  .home .content a {
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .home .content a {
+    padding: 0.5rem;
+  }
+}

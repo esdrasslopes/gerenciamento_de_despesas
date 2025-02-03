@@ -1,0 +1,142 @@
+.expenses-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.expenses-container h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.expense-header {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  padding: 12px;
+  background-color: #0991bed5;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.expense-header p {
+  flex: 1;
+  text-align: center;
+}
+
+.expenses-list {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 10px;
+}
+
+.expense-item {
+  min-height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.expense-item div {
+  flex: 1;
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+}
+
+.expense-item img {
+  width: 30px;
+  border-radius: 5px;
+}
+
+.expense-item input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+.paid {
+  background-color: #cce5ff;
+  color: #004085;
+  font-weight: bold;
+}
+
+@media (max-width: 425px) {
+  .expense-header,
+  .expenses-list {
+    width: 100%;
+    gap: 1rem;
+    min-width: 60vh;
+  }
+}
+
+@media (max-width: 375px) {
+  .expense-header,
+  .expenses-list {
+    width: 100%;
+    max-width: 100%;
+    gap: 0.5rem;
+    justify-content: c;
+  }
+
+  .expense-header p {
+    font-size: 12px;
+    padding: 2px;
+  }
+
+  .date{
+    margin-left: 15px;
+  }
+
+  .expense-item {
+    padding: 8px;
+  }
+
+  .expense-item div {
+    font-size: 12px;
+  }
+
+  .expense-item img {
+    width: 25px;
+  }
+
+  .expense-item input[type="checkbox"] {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 325px) {
+  .expense-header,
+  .expenses-list {
+    width: 100%;
+    min-width: auto;
+    max-width: 90%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .expense-header p {
+    font-size: 14px;
+  }
+
+  .expense-item {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .expense-item div {
+    font-size: 14px;
+  }
+}

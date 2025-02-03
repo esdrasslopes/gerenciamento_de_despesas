@@ -1,0 +1,23 @@
+POST http://localhost:3000/adm
+Content-Type: application/json
+
+{
+    "name": "Esdras Lopes Rocha",
+    "email": "emaildoesdrasr@gmail.com",
+    "password": "jardim22"
+}
+
+###
+PATCH http://localhost:3000/adm/679ce8520ab992caa60be9f7
+Content-Type: application/json
+
+{
+    "type": "Comida",
+    "title": "Comprei comida",
+    "value": 50,
+    "date": "31/01/2025"
+   
+}
+
+###
+GET http://localhost:3000/adm/679d1395483cc7e9033f43e9/expenses

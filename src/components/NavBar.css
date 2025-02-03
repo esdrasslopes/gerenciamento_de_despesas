@@ -1,0 +1,65 @@
+.navbar {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar h1 {
+  color: #0991bed5;
+  font-size: 1.8rem;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar ul a {
+  color: #000;
+  font-size: 1.2rem;
+  transition: 0.4s;
+}
+
+.navbar ul a:hover {
+  font-weight: bold;
+}
+
+.navbar .register-btn {
+  padding: 0.5rem 1rem;
+  background-color: #0991bed5;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0.5px 1px 4px 3px rgba(9, 145, 190, 0.4);
+  transition: 0.4s;
+  opacity: 0.9;
+}
+
+.navbar .register-btn:hover {
+  box-shadow: 0.5px 1px 4px 3px rgba(0, 123, 181, 0.4);
+  opacity: 1;
+}
+
+
+@media (max-width: 425px){
+  .navbar {
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+  }
+
+  .navbar h1{
+    font-size: 1.5rem;
+  }
+
+  .navbar ul  a{
+    font-size: 1rem;
+  }
+}
