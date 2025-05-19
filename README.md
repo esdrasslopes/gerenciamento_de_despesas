@@ -25,4 +25,8 @@ O **Gerenciador de Despesas** é um sistema simples que permite aos usuários re
 - **Backend**: Node.js, Express
 - **Banco de Dados**: MongoDB
 
+## Como utilizar
+- Utilize tanto na pasta backend quanto na pasta frontend o comando npm install para instalar as dependências do projeto
+- Crie um banco no mongo db atlas, e no arquivo connect utilize os dados disponíveis por ele
+
 
