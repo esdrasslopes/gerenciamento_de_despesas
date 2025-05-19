@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import { UserContext } from "../context/userContext";
 
@@ -13,7 +13,7 @@ import "./CreateExpense.css";
 const CreateExpense = () => {
   const navigate = useNavigate();
 
-  const { user, setData } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   const [image, setImage] = useState(null);
 
@@ -25,6 +25,13 @@ const CreateExpense = () => {
   });
 
   const showToast = useToast();
+
+  useEffect(() => {
+    if (!user._id) {
+      navigate("/");
+      return;
+    }
+  }, [user._id, navigate]);
 
   const handleChange = (e) => {
     if (e.target.name === "image") {
@@ -58,7 +65,7 @@ const CreateExpense = () => {
 
       if (res) {
         showToast(res.data.msg);
-        
+
         navigate(`/expenses/${user._id}`);
       }
     } catch (error) {

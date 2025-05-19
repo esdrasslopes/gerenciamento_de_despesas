@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import { configFetch } from "../axios/config";
 
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+
+import { UserContext } from "../context/userContext";
 
 import Loader from "../components/Loader";
 
@@ -11,9 +13,18 @@ import "./Expenses.css";
 const Expenses = () => {
   const { id } = useParams();
 
+  const navigate = useNavigate();
+
+  const { user } = useContext(UserContext);
+
   const [data, setData] = useState();
 
   useEffect(() => {
+    if (!user._id) {
+      navigate("/");
+      return;
+    }
+
     const getUser = async () => {
       try {
         const user = await configFetch.get(`/${id}`);
@@ -24,7 +35,7 @@ const Expenses = () => {
     };
 
     getUser();
-  }, [id]);
+  }, [id, user._id, navigate]);
 
   const handlePaid = async (e, expenseId) => {
     try {

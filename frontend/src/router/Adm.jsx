@@ -4,7 +4,7 @@ import { UserContext } from "../context/userContext";
 
 import { configFetch } from "../axios/config";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import useToast from "../hooks/useToast";
 
@@ -15,6 +15,12 @@ import "./Adm.css";
 const Adm = () => {
   const { user } = useContext(UserContext);
 
+  const navigate = useNavigate();
+
+  if (!user) {
+    navigate("/");
+  }
+
   const [data, setData] = useState();
 
   const [expensesValueToPay, setExpensesValueToPay] = useState(0);
@@ -24,6 +30,11 @@ const Adm = () => {
   const showToast = useToast();
 
   useEffect(() => {
+    if (!user._id) {
+      navigate("/");
+      return;
+    }
+
     const getExpenses = async () => {
       try {
         const res = await configFetch.get(`/${user._id}/expenses`);
@@ -35,7 +46,7 @@ const Adm = () => {
     };
 
     getExpenses();
-  }, [user._id]);
+  }, [user._id, navigate]);
 
   const handleDelete = async (e, expenseId) => {
     try {
